@@ -8,15 +8,15 @@ const image3 = document.getElementById('image3')
 const textBox = document.getElementById('text-box')
 
 //functions
-updateLocalStorage = (mode) => localStorage.setItem('theme', mode)
+const updateLocalStorage = (mode) => localStorage.setItem('theme', mode)
 
-imgMode = (mode) => {
+const imgMode = (mode) => {
     image1.src = `./img/undraw_proud_coder_${mode}.svg`
     image2.src = `./img/undraw_feeling_proud_${mode}.svg`
     image3.src = `./img/undraw_conceptual_idea_${mode}.svg`
 }
 
-darkMode = () => {
+const darkMode = () => {
     document.documentElement.setAttribute('data-theme', 'dark')
     nav.style.backgroundColor = 'rgb(0 0 0 /50)'
     textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)'
@@ -26,7 +26,7 @@ darkMode = () => {
     updateLocalStorage('dark')
 }
 
-lightMode = () => {
+const lightMode = () => {
     document.documentElement.setAttribute('data-theme', 'light')
     nav.style.backgroundColor = 'rgb(255 255 255/50)'
     textBox.style.backgroundColor = 'rgb(0 0 0/ 50%)'
@@ -37,7 +37,7 @@ lightMode = () => {
 }
 
 
-switchTheme = (e) => {
+const switchTheme = (e) => {
     e.target.checked ? darkMode() : lightMode()
 }
 
